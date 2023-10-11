@@ -1,22 +1,44 @@
-# rock-paper-scissors
+# Pierre-Feuille-Ciseaux
+## Démarrage du projet
+- Clonez ce dépôt avec la commande git clone [URL_DU_PROJET]
+- Installez les dépendances avec pnpm install
+- Lancez le projet avec pnpm run dev
 
-Very early README, also, english is not my primary language.
+## Identifier le projet
+Pierre-Feuille-Ciseaux est un jeu de mains amusant et simple, généralement utilisé pour prendre des décisions mineures lorsque vous et un ami êtes en désaccord.
 
-## Start the project
-- git clone this project
-- pnpm install (install dependencies)
-- pnpm run dev (start project)
+### Comprendre le problème
+Le but est de créer un programme permettant à l'utilisateur d'entrer un mot parmi "pierre", "feuille" ou "ciseaux" dans un champ. En cas d'entrée invalide, un message d'erreur s'affichera. L'adversaire (la machine) choisira aléatoirement l'une des trois options.
 
-## Identify the project
-•	Each turn, each player selects one action among "Rock," "Paper," and "Scissors"
-•	The hierarchy of actions is as follows: Rock < Paper < Scissors < Rock < Paper ...
-•	If both players choose the same action, it results in a tie, and no one scores a point.
-•	When starting a match, we count: "Rock, Paper, Scissors." At the end, we reveal our choices.
-•	A game can be either Best of 3 (BO3), where the first player to win 2 games wins the match, or Best of 5 (BO5), where the first player to win 3 games wins the match. The choice is up to the players.
-•	It is also possible to play this game with more than two players. In that case, the winner is the last one remaining.
+Le gagnant de chaque manche sera déterminé selon la hiérarchie suivante : Pierre < Feuille < Ciseaux < Pierre < Feuille < ...
+Si les deux joueurs choisissent la même action, la manche est considérée comme nulle.
 
-### Understand the problem
+Selon le mode de jeu choisi, "BO3" ou "BO5", le premier joueur à accumuler 3 ou 5 points remporte la partie.
 
-### Plan
+#### Fonctionnalités
+- Chaque tour, chaque joueur choisit une action parmi "Pierre", "Feuille" et "Ciseaux".
+- Hiérarchie des actions : Pierre < Feuille < Ciseaux < Pierre < Feuille < ...
+- En cas d'égalité, aucun point n'est attribué.
+- Une partie peut être soit en "Best of 3" (BO3) soit en "Best of 5" (BO5).
+- Le jeu peut également se jouer à plus de deux joueurs. Dans ce cas, le dernier joueur restant est le gagnant.
+
+### Planification
+- Votre programme a-t-il une interface utilisateur ? Si oui, comment sera-t-elle ? Quelles seront ses fonctionnalités ?
+  - À définir.
+<!-- Notre solution sera un programme s'exécutant dans la console du navigateur, aucune interface utilisateur n'est donc nécessaire. La seule interaction avec l'utilisateur sera un champ de saisie pour entrer son choix.
+Quelles seront les entrées de votre programme ? -->
+
+- L'utilisateur entrera son choix via une boîte de dialogue (prompt).
+Quelle est la sortie attendue ?
+  - À définir.
+<!-- La sortie attendue est la détermination du gagnant de chaque manche et, finalement, du match. -->
+
+- Étapes nécessaires pour obtenir la sortie désirée ?
+  - À définir.
 
 ### Pseudocode
+À venir.
+
+## Projet
+Code source : [TODO : ajouter l'URL lorsque le projet est terminé] <br>
+Aperçu : [TODO : ajouter l'URL lorsque le projet est terminé]
