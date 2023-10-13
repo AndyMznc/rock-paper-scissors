@@ -7,8 +7,11 @@ const playerChoiceValue: string = prompt(
   'Choose an action from "rock", "paper", "scissors".'
 ) as string;
 
-function game(playerSelection: string, computerSelection: string) {
-  console.log(playerSelection);
-  console.log(computerSelection);
+function playerSelection(playerSelection: string, computerSelection: string) {
+  if (actions.includes(playerSelection.toLowerCase())) {
+    console.log("ok, good");
+  } else {
+    console.log("wrong value");
+  }
 }
-game(playerChoiceValue, computerChoiceValue);
+playerSelection(playerChoiceValue, computerChoiceValue);
