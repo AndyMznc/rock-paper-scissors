@@ -1,14 +1,11 @@
-import getComputerChoice from "./opponent";
-
 export const actions: string[] = ["rock", "paper", "scissors"];
-const computerChoiceValue: string = getComputerChoice();
-
-const playerChoiceValue: string = prompt(
-  'Choose an action from "rock", "paper", "scissors".'
-) as string;
 
 let playerScore: number = 0;
 let computerScore: number = 0;
+
+function getComputerChoice(): string {
+  return actions[Math.floor(Math.random() * actions.length)];
+}
 
 function playRound(playerSelection: string, computerSelection: string) {
   console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
@@ -22,25 +19,25 @@ function playRound(playerSelection: string, computerSelection: string) {
   switch (playerSelection) {
     case "rock":
       if (computerSelection === "paper") {
-        console.log("perdu");
+        return computerScore++;
       } else if (computerSelection === "scissors") {
-        console.log("gagné");
+        return playerScore++;
       }
       break;
 
     case "paper":
       if (computerSelection === "scissors") {
-        console.log("perdu");
+        return computerScore++;
       } else if (computerSelection === "rock") {
-        console.log("gagné");
+        return playerScore++;
       }
       break;
 
     case "scissors":
       if (computerSelection === "rock") {
-        console.log("perdu");
+        return computerScore++;
       } else if (computerSelection === "paper") {
-        console.log("gagné");
+        return playerScore++;
       }
       break;
 
@@ -50,15 +47,31 @@ function playRound(playerSelection: string, computerSelection: string) {
   }
 }
 
-playRound(playerChoiceValue, computerChoiceValue);
+function game() {
+  while (playerScore < 3 && computerScore < 3) {
+    for (let i = 0; i < 5; i++) {
+      const playerChoiceValue: string = prompt(
+        'Choose an action from "rock", "paper", "scissors".'
+      ) as string;
 
-// function playerSelection(playerSelection: string, computerSelection: string) {
-//   let playerChoice = playerSelection.toLowerCase()
+      const computerChoiceValue: string = getComputerChoice();
 
-//   if (!actions.includes(playerChoice)) {
-//     console.log("Please, select a valid value.");
-//   } else {
+      playRound(playerChoiceValue.toLowerCase(), computerChoiceValue);
 
-//   }
-// }
-// playerSelection(playerChoiceValue, computerChoiceValue);
+      console.log(`player : ${playerScore} - computer : ${computerScore}`);
+
+      if (playerScore >= 3 || computerScore >= 3) {
+        break;
+      }
+    }
+
+    if (playerScore >= 3 || computerScore >= 3) {
+      break;
+    }
+  }
+
+  playerScore == 3
+    ? console.log("You win !")
+    : console.log("You loose, maybe next time !");
+}
+game();
